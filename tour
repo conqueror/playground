@@ -1,10 +1,9 @@
-# Playground - noun: a place where people can play
-```
-println("Hello, world")
-```
-##Variables and Constants
+// Playground - noun: a place where people can play
 
-```
+println("Hello, world")
+
+// Variables and Constants
+
 var myVariable = 42
 myVariable = 50
 
@@ -29,32 +28,29 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 let friend = "float "
 let numberFloat = 55.6
 let greet = "Hey \(friend  + String(numberFloat))"
-```
 
-##Arrays and Dictionaries
-```
+
+// Arrays and Dictionaries
 var shoppingList = ["swordfish", "water", "beer", "books"]
 shoppingList[1] = "bottle of water"
 
 var occupations = [
   "Fatih":"Developer",
-  "Nec":"Engineer",
+  "Neco":"Engineer",
 ]
 
 occupations["jayne"] = "Public Relations"
 
-```
-##To create an empty array or dictionary
+// To create an empty array or dictionary
 
-```
 let emptyArray = String[]()
 let emptyDictionary = Dictionary<String, Float>()
 
 shoppingList = []
 occupations = [:]
-```
-## Control Flows
-```
+
+// Control Flows
+
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {
@@ -65,9 +61,8 @@ for score in individualScores {
   }
 }
 teamScore
-```
-##Optional value either contains a value or contains nil
-```
+
+// Optional value either contains a value or contains nil
 var optionalString: String? = "Hello"
 optionalString == nil
 
@@ -84,11 +79,9 @@ if let surName = nilName {
 } else {
   var surName = "Hello"
 }
-```
-##Switch case
-#### No need to break! Supports any kind of data
 
-```
+// Switch case
+// no need to break! Supports any kind of data
 let vegetable = "Yellow Cucumber"
 switch vegetable {
 case "celery":
@@ -100,9 +93,9 @@ case let x where x.hasSuffix("Cucumber"):
 default:
   let vegetableComment = "Everything tastes good in Swift"
 }
-```
-## for in
-```
+
+// for in
+
 let interestingNumbers = [
   "Prime": [2, 3, 5, 7, 11, 13],
   "Fibonacci": [1, 1, 2, 3, 5, 8],
@@ -121,9 +114,9 @@ for (kinds, numbers) in interestingNumbers {
 }
 largest
 kindOfNumber
-```
-## While
-```
+
+// While
+
 var n = 2
 while n < 100 {
   n = n * 2
@@ -136,11 +129,11 @@ do {
 
 } while m < 100
 m
-```
-#### Indexes in for
-#### .. to make a range that omits its upper value
-#### ... to make a range that includes both values
-```
+
+// Indexes in for
+// .. to make a range that omits its upper value
+// ... to make a range that includes both values
+
 var firstForLoop = 0
 for i in 0..3 {
   firstForLoop += i
@@ -152,23 +145,21 @@ for var i = 0; i < 3; ++i {
   secondForLoop += i
 }
 secondForLoop
-```
-## Functions and Closures
-```
+
+// Functions and Closures
+
 func greet(name: String, day: String) -> String {
   return "Hello \(name), today is \(day)"
 }
 greet("Fatih", "Thursday")
-```
-### Tuples in functions
-```
+
+// Tuples in functions
 func getGasPrices() -> (Double, Double, Double) {
   return (3.59, 3.69, 3.79)
 }
 getGasPrices()
-```
-### Variable number of arguments in functions
-```
+
+// Variable number of arguments in functions
 func sumOf(numbers:Int...) -> (Int, Int) {
   var sum = 0
   var counter = 0
@@ -187,9 +178,8 @@ func calculateAverage(firstNumber: Int, secondNumber: Int) -> Int {
   return average
 }
 calculateAverage(10, 20)
-```
-### Nested functions
-```
+
+// Nested functions
 func returnFifteen() -> Int {
   var y = 10
   func add() {
@@ -199,9 +189,8 @@ func returnFifteen() -> Int {
   return y
 }
 returnFifteen()
-```
-### Return another function as its value
-```
+
+// Return another function as its value
 func makeIncrementer() -> (Int -> Int) {
   func addOne(number: Int) -> Int {
     return 1 + number
@@ -210,9 +199,8 @@ func makeIncrementer() -> (Int -> Int) {
 }
 var increment = makeIncrementer()
 increment(7)
-```
-### Take another function as one of arguments
-```
+
+// Take another function as one of arguments
 func hasAnyMatches(list: Int[], condition: Int -> Bool) -> Bool {
   for item in list {
     if condition(item) {
@@ -228,9 +216,8 @@ func lessThanTen(number: Int) -> Bool {
 var numbers = [9, 29, 19, 79]
 hasAnyMatches(numbers, lessThanTen)
 
-```
-## Closures
-```
+
+// Closures
 numbers.map({
   (number: Int) -> Int in
   let result = 3 * number
@@ -246,15 +233,13 @@ numbers.map({
     return number
   }
   })
-```
-### Known parameters and returns
-```
+
+// Known parameters and returns
 numbers.map({ number in 3 * number })
 
 sort([1, 6, 7, 9]) { $0 > $1 }
-```
-## Objects and Classes
-```
+
+// Objects and Classes
 class Shape {
   var numberOfSides = 0
   let constProp = "This is a constant "
@@ -265,16 +250,15 @@ class Shape {
     return constProp + description
   }
 }
-```
-### Create an instance of a class
-```
+
+// Create an instance of a class
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDiscription()
 shape.simplerDiscription("description")
-```
-### Class init
-```
+
+// Class init
+
 class NamedShape {
   var numberOfSides: Int = 0
   var name: String
@@ -291,9 +275,8 @@ class NamedShape {
   }
 }
 
-```
-### Override inherited method
-```
+// Override inherited method
+
 class Square: NamedShape {
   var sideLength: Double
   
@@ -331,9 +314,9 @@ class Circle: NamedShape {
 let testCircle = Circle(radius: 4, name: "New circle")
 testCircle.area()
 testCircle.describe()
-```
-## Getter and setters
-```
+
+// Getter and setters
+
 class EquilateralTriangle: NamedShape {
   var sideLength: Double = 0.0
   
@@ -361,9 +344,9 @@ var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
 triangle.perimeter
 triangle.perimeter = 9.9
 triangle.sideLength
-```
-#### willSet and didSet to provide code that is run before and after setting a new value
-```
+
+// willSet and didSet to provide code that is run before and after setting a new value
+
 class TriangleAndSquare {
   var triangle: EquilateralTriangle {
   willSet {
@@ -387,9 +370,9 @@ triangleAndSquare.square.sideLength
 triangleAndSquare.triangle.sideLength
 triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
 triangleAndSquare.triangle.sideLength
-```
-## Enumerations
-```
+
+// Enumerations
+
 enum Rank: Int {
   case Ace = 1 // specify first raw value. The rest of the raw values are assigned in order
   case Two, Three, Four, Five, Sixe
@@ -436,10 +419,10 @@ enum Suit {
 
 let hearts = Suit.Hearts
 let heartDescription = hearts.simpleDescription()
-```
-## Structures
-### They are like classes but they are copied when they are passed around in code while classes are passed by reference
-```
+
+// Structures
+// They are like classes but they are copied when they are passed around in code while classes are passed by reference
+
 struct Card {
   var rank: Rank
   var suit: Suit
@@ -465,16 +448,16 @@ case let .Result(sunrise, sunset):
 case let .Error(error):
   let serverResponse = "Failure... \(error)"
 }
-```
-## Protocols
-```
+
+// Protocols
+
 protocol ExampleProtocol {
   var simpleDescription: String { get }
   mutating func adjust()
 }
-```
-### Classes, enumerations and structs can all adopt protocols.
-```
+
+// Classes, enumerations and structs can all adopt protocols.
+
 class SimpleClass: ExampleProtocol {
   var simpleDescription: String = "A very simple class example"
   var anotherProperty: Int = 79799
@@ -498,9 +481,9 @@ struct SimpleStructure: ExampleProtocol {
 var aSimpleStruct = SimpleStructure()
 aSimpleStruct.adjust()
 let aSimpleStructDescription = aSimpleStruct.simpleDescription
-```
-## Extensions
-```
+
+// Extensions
+
 extension Int: ExampleProtocol {
   var simpleDescription: String {
   return "The number \(self)"
@@ -511,18 +494,18 @@ extension Int: ExampleProtocol {
 }
 
 7.simpleDescription
-```
-#### We can use protocol name just like any other type - for example, to create a collection of objects that have different types but all conform to a single protocol.
-#### When we work with values whose type is a protocol type, methods outside the protocol definition are not available.
 
-```
+// We can use protocol name just like any other type - for example, to create a collection of objects that have different types but all conform to a single protocol.
+// When we work with values whose type is a protocol type, methods outside the protocol definition are not available.
+
+
 let protocolValue: ExampleProtocol = aSimpleClass
 protocolValue.simpleDescription
 // protocolValue.anotherProperty
-```
 
-## Generics
-```
+
+// Generics
+
 func repeat<ItemType>(item: ItemType, times: Int) -> ItemType[] {
   var result = ItemType[]()
   for i in 0..times {
@@ -532,18 +515,18 @@ func repeat<ItemType>(item: ItemType, times: Int) -> ItemType[] {
 }
 
 repeat("knock", 4)
-```
-#### We can make generic forms of functions and methods, as well as classes, enumerations and structures.
-```
+
+// We can make generic forms of functions and methods, as well as classes, enumerations and structures.
+
 enum OptionalValue<T> {
   case None
   case Some(T)
 }
 var possibleInteger: OptionalValue<Int> = .None
 possibleInteger = .Some(100)
-```
-#### We can use where after the type name to specify a list of requirements
-```
+
+// Use where after the type name to specify a list of requirements
+
 func anyCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Element: Equatable, T.GeneratorType.Element == U.GeneratorType.Element> (lhs:T, rhs:U) -> Bool {
   for lhsItem in lhs {
     for rhsItem in rhs {
@@ -555,4 +538,4 @@ func anyCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Ele
   return false
 }
 anyCommonElements([1, 2, 5], [4])
-```
+
