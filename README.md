@@ -1,6 +1,6 @@
 
 # Swift Playground
-==================
+------------------
 ```
 println("Hello, world")
 ```
