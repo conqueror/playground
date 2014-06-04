@@ -1,7 +1,6 @@
-playground
-==========
 
-# Playground - noun: a place where people can play
+# Swift Playground
+==================
 ```
 println("Hello, world")
 ```
